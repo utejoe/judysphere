@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import authReducer from "./state";
 import { configureStore } from "@reduxjs/toolkit";
+import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 import { Provider } from "react-redux";
 import {
   persistStore,
@@ -17,6 +18,8 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { PersistGate } from "redux-persist/integration/react";
+
+if (process.env.NODE_ENV === 'production') disableReactDevTools()
 
 const persistConfig = { key: "root", storage, version: 1 };
 const persistedReducer = persistReducer(persistConfig, authReducer);
