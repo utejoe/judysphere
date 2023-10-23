@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import { fetchData } from '../api/api'; // Import the fetchData function
 
 const UserImage = ({ image, size = "60px" }) => {
   return (
