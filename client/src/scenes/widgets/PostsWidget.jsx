@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
 import PostWidget from "./PostWidget";
+import { fetchData } from '../api/api'; // Import the fetchData function
 
 const PostsWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();

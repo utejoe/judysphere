@@ -24,6 +24,7 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
+import { fetchData } from '../api/api'; // Import the fetchData function
 
 const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();

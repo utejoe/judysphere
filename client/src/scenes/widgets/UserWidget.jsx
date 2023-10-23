@@ -11,6 +11,7 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { fetchData } from '../api/api'; // Import the fetchData function
 
 const UserWidget = ({ userId, picturePath }) => {
   const [user, setUser] = useState(null);
