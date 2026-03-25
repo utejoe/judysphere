@@ -32,6 +32,23 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
+/* BASIC HEALTH ROUTES */
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "JudySphere backend is running",
+  });
+});
+
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    service: "judysphere",
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString(),
+  });
+});
+
 /* FILE STORAGE */
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
